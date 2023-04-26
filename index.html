@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="white">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" type="text/css" href="style.css" media="all">
+    <title>PWA</title>
+</head>
+    <body>
+        <div id="start">
+        <header>
+            <nav class="navbar">
+                <h2>Logo</h2>
+                <div class="container">
+                    <ul class="nav-menu">
+                        <li class="nav-item" id="blue" onclick="changeToBlue()">Light Blue</li>
+                        <li class="nav-item" id="gold" onclick="changeToGold()">Light Gold</li>
+                        <li class="nav-item" id="defcolor" onclick="changeToDef()">Default Color</li>
+                    </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                </div>
+            </nav>
+            <h1>Welcome to PWA's</h1>
+        </header>
+        <section>
+            <h3>What in the world are PWA's(Progressive Web Apps)?</h3>
+            <p>PWA's are web apps that can be installed on your system
+            and can be interacted with offline or without stable internet connection.
+            This benefits users by providing them a smooth and 
+            reliable experience when they are navigating on the application.
+            </p> <br>
+            <p>
+               When building a PWA, a developer's goal is to make the application
+               enticing to be on their home screen as well as reliability no matter
+               their network status. An important tip to keep users enticed is 
+               to provide push notifications to keep engagement higher resulting 
+               in possible rises in sales.
+            </p>
+        </section>
+        </div>
+        <script src="main.js"></script>
+        <script src="hamburger.js"></script>
+        <script src="service-worker.js"></script>
+    </body>
+</html>
