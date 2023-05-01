@@ -46,11 +46,11 @@ self.addEventListener("install", event => {
 });
 
 self.addEventListener("fetch", event => {
-  if (event.request.url === "https://fanciful-praline-5f0d16.netlify.app/") {
+  if (event.request.url === "https://fanciful-praline-5f0d16.netlify.app") {
       // or whatever your app's URL is
       event.respondWith(
           fetch(event.request).catch(err =>
-              self.cache.open(cacheName).then(cache => cache.match("/"))
+              self.cache.open(cacheName).then(cache => cache.match(assets))
           )
       );
   } else {
