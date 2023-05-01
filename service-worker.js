@@ -13,21 +13,41 @@ const assets = [
 ];
 
 /* for installing event listener */
-self.addEventListener("install", function (e) {
-    e.waitUntil(
-      caches.open(cacheName).then(function (assets) {
-        return assets;
-      })
-    );
-  });
+// self.addEventListener("install", function (e) {
+//     e.waitUntil(
+//       caches.open(cacheName).then(function (cache) {
+//         return cache.add(assets);
+//       })
+//     );
+//   });
 
 /* for fetching assets */
-self.addEventListener("fetch", function (event) {
-  console.log(event.request.url);
-    event.respondWith(
-      caches.match(event.request).then(function(response) {
-        return response || fetch(event.request);
-      })
-    );
-  });
+// self.addEventListener("fetch", function (e) {
+//   console.log(e.request.url);
+//     e.respondWith(
+//       caches.match(e.request).then(function(response) {
+//         return response || fetch(e.request);
+//       })
+//     );
+//   });
+
+
+
+
+self.addEventListener("install", (event) => {
+  console.log("Service Worker : Installed!")
+
+  event.waitUntil(
+      
+      (async() => {
+          try {
+              cache_obj = await caches.open(cacheName)
+              cache_obj.addAll(assets)
+          }
+          catch{
+              console.log("error occured while caching...")
+          }
+      })()
+  )
+} )
 
