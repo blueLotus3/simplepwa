@@ -66,6 +66,17 @@ ul.nav-menu li a:hover {
 
 
 @media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 8vw;
+    }
+    h3 {
+        font-size: 4vw;
+        text-align: center;
+    }
+    p {
+        font: 2vw;
+        margin: 5vw;
+    }
     .nav-menu {
         position: fixed;
         left: -111%;
