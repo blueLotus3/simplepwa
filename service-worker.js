@@ -15,8 +15,8 @@ const assets = [
 /* for installing event listener */
 self.addEventListener("install", function (e) {
     e.waitUntil(
-      caches.open(cacheName).then(function (cache) {
-        return cache.addAll(["/"]);
+      caches.open(cacheName).then(function (assets) {
+        return assets.addAll(["/"]);
       })
     );
   });
