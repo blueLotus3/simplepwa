@@ -29,7 +29,8 @@
     document.getElementById("start").style.backgroundImage = "url(images/lightgold.jpg)";
  }
  function changeToDef() {
-    document.getElementById("start").body.style.backgroundColor = "blue";
+    document.getElementById("start").body.style.backgroundColor = 'blue';
  }
+   
 
 

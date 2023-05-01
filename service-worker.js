@@ -8,7 +8,8 @@ const assets = [
 "/js/manifest.json",
 "/images/lightblue.jpg",
 "/images/lightgold.jpg",
-"/images/gold.jpeg"
+"/images/gold.jpeg",
+"/images/pwwa.png"
 ];
 
 /* for installing event listener */

@@ -4,6 +4,12 @@ body, html{
     height: 100%;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+#logo {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    border-radius: 10px;
+}
 h1 {
     text-align: center;
 
@@ -92,6 +98,7 @@ ul.nav-menu li a:hover {
 
 .nav-item {
     margin: 2.5rem 0;
+    cursor: pointer;
 }
 
 .hamburger {
