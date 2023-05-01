@@ -33,21 +33,33 @@ const assets = [
 
 
 
-
-self.addEventListener("install", (event) => {
-  console.log("Service Worker : Installed!")
-
+self.addEventListener("install", event => {
+  console.log("installing...");
   event.waitUntil(
-      
-      (async() => {
-          try {
-              cache_obj = await caches.open(cacheName)
-              cache_obj.addAll(assets)
-          }
-          catch{
-              console.log("error occured while caching...")
-          }
-      })()
-  )
-} )
+      caches
+          .open(cacheName)
+          .then(cache => {
+              return cache.addAll(assets);
+          })
+          .catch(err => console.log(err))
+  );
+});
+
+self.addEventListener("fetch", event => {
+  if (event.request.url === "https://fanciful-praline-5f0d16.netlify.app/") {
+      // or whatever your app's URL is
+      event.respondWith(
+          fetch(event.request).catch(err =>
+              self.cache.open(cacheName).then(cache => cache.match("/"))
+          )
+      );
+  } else {
+      event.respondWith(
+          fetch(event.request).catch(err =>
+              caches.match(event.request).then(response => response)
+          )
+      );
+  }
+});
+
 
