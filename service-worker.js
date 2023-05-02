@@ -17,16 +17,16 @@ self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open('cache').then(function(cache) {
       return cache.addAll([
-        "./",
-        "./index.html",
-        "./css/style.css",
-        "./js/hamburger.js",
-        "./js/main.js",
-        "./js/manifest.json",
-        "./images/lightblue.jpg",
-        "./images/lightgold.jpg",
-        "./images/gold.jpeg",
-        "./images/pwwa.png"
+        "/",
+        "/index.html",
+        "/css/style.css",
+        "/js/hamburger.js",
+        "/js/main.js",
+        "/js/manifest.json",
+        "/images/lightblue.jpg",
+        "/images/lightgold.jpg",
+        "/images/gold.jpeg",
+        "/images/pwwa.png"
        ]);
     })
    );
